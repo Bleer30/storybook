@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 import clsx from 'clsx';
-import styles from './button.module.css?url';
+import styles from './button.module.css';
 
 export type ButonProps = ComponentProps<'button'> & {
   variants: 'primary' | 'secondary' | 'destructive';
