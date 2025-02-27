@@ -1,32 +1,72 @@
 {
-  "name": "cra",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "anthology",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm storybook",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write --ignore-unknown .",
+    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky",
+    "chromatic": "npx chromatic --project-token=chpt_3bb1489b1c14bac"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.4",
-    "@storybook/addon-essentials": "^8.5.3",
-    "@storybook/addon-interactions": "^8.5.3",
-    "@storybook/addon-onboarding": "^8.5.3",
-    "@storybook/blocks": "^8.5.3",
-    "@storybook/react": "^8.5.3",
-    "@storybook/react-vite": "^8.5.3",
-    "@storybook/test": "^8.5.3",
-    "css-loader": "^7.1.2",
-    "prop-types": "^15.8.1",
-    "storybook": "^8.5.3",
-    "style-loader": "^4.0.0"
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
   "dependencies": {
-    "clsx": "^2.1.1"
+    "@fontsource-variable/inter": "^5.0.18",
+    "lucide-react": "0.368.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "1.5.0",
+    "@storybook/addon-a11y": "8.1.6",
+    "@storybook/addon-essentials": "8.1.6",
+    "@storybook/addon-interactions": "8.1.6",
+    "@storybook/addon-links": "8.1.6",
+    "@storybook/addon-onboarding": "8.1.6",
+    "@storybook/addon-themes": "8.1.6",
+    "@storybook/blocks": "8.1.6",
+    "@storybook/react": "8.1.6",
+    "@storybook/react-vite": "8.1.6",
+    "@storybook/test": "8.1.6",
+    "@storybook/test-runner": "^0.17.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@typescript-eslint/eslint-plugin": "7.12.0",
+    "@typescript-eslint/parser": "7.12.0",
+    "@vitejs/plugin-react": "4.3.0",
+    "autoprefixer": "10.4.19",
+    "axe-playwright": "2.0.1",
+    "chromatic": "^11.7.1",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.1.1",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.7",
+    "eslint-plugin-storybook": "0.8.0",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.5",
+    "msw": "2.3.1",
+    "msw-storybook-addon": "2.0.2",
+    "postcss": "8.4.38",
+    "prettier": "3.3.1",
+    "prettier-plugin-tailwindcss": "0.5.14",
+    "storybook": "8.1.6",
+    "tailwindcss": "3.4.4",
+    "typescript": "5.4.5",
+    "vite": "5.2.12",
+    "vitest": "1.6.0"
   }
 }
