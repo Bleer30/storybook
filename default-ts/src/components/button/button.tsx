@@ -3,17 +3,17 @@ import clsx from 'clsx';
 import styles from './button.module.css';
 
 export type ButonProps = ComponentProps<'button'> & {
-  variants: 'primary' | 'secondary' | 'destructive';
+  variant: 'primary' | 'secondary' | 'destructive';
   size?: 'small' | 'medium' | 'large';
 };
 
 export const Button = ({
-  variants = 'primary',
+  variant = 'primary',
   size = 'medium',
   className,
   ...props
 }: ButonProps) => {
-  let classes = clsx(styles.button, styles[variants], className);
+  let classes = clsx(styles.button, styles[variant], className);
 
   return <button className={classes} {...props} />;
 };

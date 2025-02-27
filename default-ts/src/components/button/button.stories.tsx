@@ -1,28 +1,26 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
 
-const meta = {
+const meta: Meta<typeof Button> = {
+  title: 'Button',
   component: Button,
   args: {
     children: 'Button',
+    variant: 'primary',
+    size: 'medium',
+    disabled: false,
   },
   argTypes: {
-    disabled: {
-      control: 'boolean',
-    },
-    variants: {
-      control: 'select',
-    },
+    disabled: { control: 'boolean' },
   },
-} satisfies Meta;
-
+};
 export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
     children: 'Button',
-    variants: 'primary',
+    variant: 'primary',
     disabled: false,
   },
 };
@@ -30,7 +28,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     children: 'Button',
-    variants: 'secondary',
+    variant: 'secondary',
     disabled: false,
   },
 };
@@ -38,7 +36,7 @@ export const Secondary: Story = {
 export const Destructive: Story = {
   args: {
     children: 'Button',
-    variants: 'destructive',
+    variant: 'destructive',
     disabled: false,
   },
 };
