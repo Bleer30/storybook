@@ -5,11 +5,6 @@ export type ButtonProps = ComponentProps<'button'> &
   ButtonVariants & {
     size?: 'small' | 'medium' | 'large';
   };
-export const Button = ({
-  variant = 'primary',
-  size = 'medium',
-  className,
-  ...props
-}: ButtonProps) => {
+export const Button = ({ variant = 'primary', size = 'medium', ...props }: ButtonProps) => {
   return <button {...props} className={variants({ variant, size })} />;
 };

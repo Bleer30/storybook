@@ -77,5 +77,3 @@ export const Icon = ({ type, ...props }: IconProps) => {
   const IconComponent = iconComponents[type];
   return <IconComponent {...props} />;
 };
-
-export const icons = Object.keys(iconComponents) as IconProps['type'][];

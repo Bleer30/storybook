@@ -19,7 +19,7 @@ export default meta;
 export type Story = StoryObj<typeof Callout>;
 
 export const Primary: Story = { args: { title: 'Primary', variant: 'primary' } };
-export const information: Story = { args: { title: 'information', variant: 'information' } };
-export const success: Story = { args: { title: 'success', variant: 'success' } };
-export const danger: Story = { args: { title: 'danger', variant: 'danger' } };
-export const warning: Story = { args: { title: 'warning', variant: 'warning' } };
+export const Information: Story = { args: { title: 'Information', variant: 'information' } };
+export const Success: Story = { args: { title: 'Success', variant: 'success' } };
+export const Danger: Story = { args: { title: 'Danger', variant: 'danger' } };
+export const Warning: Story = { args: { title: 'Warning', variant: 'warning' } };
