@@ -44,12 +44,6 @@ Storybook is set up to allow you to view and test components in isolation. To st
 
 This will open an interface in your browser where you can navigate and view the component stories.
 
-## Contributing
+## Anthology
 
-If you'd like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a branch for your changes (git checkout -b feature/new-feature).
-3. Make your changes and commit them (git commit -am 'Add new feature').
-4. Push your branch (git push origin feature/new-feature).
-5. Open a pull request to have your changes reviewed.
+An example repository for Steve's [Building Design Systems with Storybook](https://stevekinney.net/courses/storybook) course for [Frontend Masters](https://frontendmasters.com)
