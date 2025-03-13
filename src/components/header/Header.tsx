@@ -1,11 +1,20 @@
-import React from 'react';
-
 import PropTypes from 'prop-types';
 
-import { Button } from './Button';
 import './header.css';
+import { Button } from '../button';
 
-export const Header = ({ user = null, onLogin, onLogout, onCreateAccount }) => (
+interface User {
+  name: string;
+}
+
+interface HeaderProps {
+  user?: User | null;
+  onLogin: () => void;
+  onLogout: () => void;
+  onCreateAccount: () => void;
+}
+
+export const Header = ({ user = null, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
   <header>
     <div className="storybook-header">
       <div>
@@ -33,12 +42,18 @@ export const Header = ({ user = null, onLogin, onLogout, onCreateAccount }) => (
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button size="small" onClick={onLogout}>
+              Log out
+            </Button>
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button size="small" onClick={onLogin}>
+              Log in
+            </Button>
+            <Button variant="primary" size="small" onClick={onCreateAccount}>
+              Sign up
+            </Button>
           </>
         )}
       </div>

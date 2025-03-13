@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
 
-const meta: Meta<typeof Button> = {
-  title: 'Button',
+const meta = {
+  title: 'Components/Button',
   component: Button,
   args: {
     children: 'Button',
@@ -11,32 +11,71 @@ const meta: Meta<typeof Button> = {
     disabled: false,
   },
   argTypes: {
-    disabled: { control: 'boolean' },
+    children: {
+      name: 'Label',
+      control: 'select',
+      description: 'The text displayed on the button',
+      options: ['Button', 'Click me', 'Submit', 'Cancel'],
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    variant: {
+      control: 'select',
+    },
   },
-};
+} satisfies Meta;
+
 export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    children: 'Button',
     variant: 'primary',
-    disabled: false,
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'Button',
+    children: 'Secondary',
     variant: 'secondary',
-    disabled: false,
   },
 };
 
 export const Destructive: Story = {
   args: {
-    children: 'Button',
     variant: 'destructive',
-    disabled: false,
+  },
+};
+
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+  },
+};
+
+export const Dark: Story = {
+  parameters: {
+    themes: {
+      themeOverride: 'dark',
+    },
+  },
+};
+
+export const Mobile: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
   },
 };
